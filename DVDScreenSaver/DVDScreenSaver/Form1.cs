@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVDScreenSaver.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace DVDScreenSaver
         public Form1()
         {
             InitializeComponent();
+            //kommentar
+#if DEBUG
+            MessageBox.Show("DEBUG");
+#endif
+
+            this.StartPosition = FormStartPosition.Manual;
+            this.Left = Settings.Default.PosX;
+            this.Top = Settings.Default.PosY;
+       
+
         }
 
         int speedX = 2;
