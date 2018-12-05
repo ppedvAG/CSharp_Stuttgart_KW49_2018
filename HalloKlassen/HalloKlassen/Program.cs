@@ -25,15 +25,15 @@ namespace HalloKlassen
 
             ZeigeMotorrad(meinMotorrad);
 
-            meinMotorrad = new Motorrad(); //instanzierung
-            meinMotorrad.Hersteller = "BMW";
+            meinMotorrad = new Motorrad("BMW"); //instanzierung
+            //meinMotorrad.Hersteller = "BMW";
             meinMotorrad.Ps = 36;
             ZeigeMotorrad(meinMotorrad);
             ZeigeMotorrad(meinMotorrad);
 
 
             //Motorrad zweitMotorrad = new Motorrad();
-            var zweitMotorrad = new Motorrad
+            var zweitMotorrad = new Motorrad("Susi")
             {
                 Hersteller = "Suzuki",
                 Ps = 136,
@@ -65,43 +65,5 @@ namespace HalloKlassen
     {
         public int X { get; set; }
         public int Y { get; set; }
-    }
-
-    class Motorrad
-    {
-        private int ps;//datenfeld
-
-        public int Ps //full Property
-        {
-            get { return ps; }
-            internal set { ps = value; }
-        }
-
-        public string Hersteller { get; internal set; }
-        public string Farbe { get; set; }
-        public DateTime Baujahr { get; set; }
-
-
-
-        public void Fahren()
-        {
-            for (int i = 0; i < ps; i++)
-            {
-                Console.Write("*brumm*");
-            }
-            Console.WriteLine();
-        }
-
-        ////beispiel für getter funktion
-        // public int GetPs()
-        // {
-        //     return ps;
-        // }
-
-        //beispiel für setter methode
-        //public void SetPs(int ps)
-        //{
-        //    this.ps = ps;
-        //}
     }
 }
