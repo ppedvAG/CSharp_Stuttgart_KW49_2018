@@ -5,11 +5,13 @@ namespace HalloKlassen
    public class Motorrad
     {
 
+        public string FahrgestellNummer { get; protected set; }
 
         public Motorrad() //standard construktor
         {
             Farbe = "Gelb";
             Baujahr = DateTime.Now;
+            FahrgestellNummer = "AAAAAAA";
         }
 
         public Motorrad(string hersteller) : this()
@@ -31,7 +33,7 @@ namespace HalloKlassen
 
 
 
-        public void Fahren()
+        public virtual void Fahren()
         {
             for (int i = 0; i < ps; i++)
             {
@@ -39,6 +41,9 @@ namespace HalloKlassen
             }
             Console.WriteLine();
         }
+
+
+
 
         ////beispiel für getter funktion
         // public int GetPs()

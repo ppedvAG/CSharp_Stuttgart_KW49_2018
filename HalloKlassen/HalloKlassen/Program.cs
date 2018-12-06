@@ -10,21 +10,9 @@ namespace HalloKlassen
     {
         static void Main(string[] args)
         {
-
-            int zahl = 7;
-            Console.WriteLine(zahl);
-            Verdoppeln(zahl);
-            Console.WriteLine(zahl);
-
-            decimal gehalt = 34567;
-
-
             Console.WriteLine("*** Hallo Klassen ***");
 
             Motorrad meinMotorrad = null; //deklaration
-
-            ZeigeMotorrad(meinMotorrad);
-
             meinMotorrad = new Motorrad("BMW"); //instanzierung
             //meinMotorrad.Hersteller = "BMW";
             meinMotorrad.Ps = 36;
@@ -42,17 +30,68 @@ namespace HalloKlassen
             };
             ZeigeMotorrad(zweitMotorrad);
 
+
+            var rennmo = new Rennmotorrad
+            {
+                Heckspoiler = true,
+                Turbo = 2000,
+                Farbe = "Blau",
+                Ps = 8000,
+                Hersteller = "Duplo"
+            };
+
+            ZeigeMotorrad(rennmo);
+
+            var cross = new Cross()
+            {
+                Schutzblech = true,
+                Farbe = "Gelb",
+                Ps = 12,
+                Hersteller = "Jeep"
+            };
+
+            ZeigeMotorrad(cross);
+
+
             Console.WriteLine("Ende");
             Console.ReadLine();
         }
 
         static void ZeigeMotorrad(Motorrad mr)
         {
+            //#1 old school casing mit is
+            if (mr is Cross)
+            {
+                Cross cross = (Cross)mr; //casting
 
+                if (cross.Schutzblech)
+                    Console.WriteLine("Ist cross mit Schutzblech");
+                else
+                    Console.WriteLine("Ist cross ohne Schutzblech");
+            }
+            
+            //#2 ab .net 2.0: boxing
+            Cross mrAsCross = mr as Cross;
+            if (mrAsCross != null)
+            {
+                if (mrAsCross.Schutzblech)
+                    Console.WriteLine("Ist cross mit Schutzblech");
+                else
+                    Console.WriteLine("Ist cross ohne Schutzblech");
+            }
 
+            //#3 ab C#6 (VS2015): pattern matching
+            if (mr is Cross mrIsCross)
+            {
+                if (mrIsCross.Schutzblech)
+                    Console.WriteLine("Ist cross mit Schutzblech");
+                else
+                    Console.WriteLine("Ist cross ohne Schutzblech");
+            }
 
             Console.WriteLine($"Das Motorrad hat {mr.Ps} PS");
-            mr.Fahren();
+            if (mr.Ps < 1000)
+                mr.Fahren();
         }
 
         static void Verdoppeln(int z)
