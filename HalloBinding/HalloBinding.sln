@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloBinding", "HalloBinding\HalloBinding.csproj", "{ACDA2058-1CD5-4667-B548-7DBE9837FAFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACDA2058-1CD5-4667-B548-7DBE9837FAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACDA2058-1CD5-4667-B548-7DBE9837FAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACDA2058-1CD5-4667-B548-7DBE9837FAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACDA2058-1CD5-4667-B548-7DBE9837FAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04F5363D-759D-45A5-97B4-7A8246B6CA0F}
+	EndGlobalSection
+EndGlobal
