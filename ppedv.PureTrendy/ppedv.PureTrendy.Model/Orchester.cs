@@ -5,6 +5,6 @@ namespace ppedv.PureTrendy.Model
     public class Orchester
     {
         public string Name { get; set; }
-        public List<Instrument> Instrumente { get; set; } = new List<Instrument>();
+        //public List<Instrument> Instrumente { get; set; } = new List<Instrument>();
     }
 }

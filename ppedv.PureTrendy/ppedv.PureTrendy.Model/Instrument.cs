@@ -6,6 +6,6 @@ namespace ppedv.PureTrendy.Model
     {
         public string Name { get; set; }
         public string Material { get; set; }
-        public List<Orchester> Orchester { get; set; } = new List<Orchester>();
+        //public List<Orchester> Orchester { get; set; } = new List<Orchester>();
     }
 }

@@ -47,11 +47,18 @@ namespace ppedv.PureTrendy.Data.XML
                 throw new FridayAfternoonException() { Datum = DateTime.Now };
             }
 
-            using (var reader = new StreamReader($"{typeof(T).Name}.xml"))
+            using (var reader = new StreamReader(@"C:\Users\ar2\source\repos\ppedvAG\CSharp_Stuttgart_KW49_2018\ppedv.PureTrendy\ppedv.PureTrendy.UI.CoreConsole\bin\Debug\netcoreapp2.1\Schlaginstrumenkwejfnijwefnijwenft.xml"))
             {
                 var serial = new XmlSerializer(typeof(List<T>));
                 return (IEnumerable<T>)serial.Deserialize(reader);
             }
+    
+        }
+
+        enum lala
+        {
+            eins=1,
+            zwei=2
         }
 
 
