@@ -13,7 +13,7 @@ namespace HalloKlassen
             Console.WriteLine("*** Hallo Klassen ***");
 
             Motorrad meinMotorrad = null; //deklaration
-            meinMotorrad = new Motorrad("BMW"); //instanzierung
+            meinMotorrad = new Rennmotorrad(); //instanzierung
             //meinMotorrad.Hersteller = "BMW";
             meinMotorrad.Ps = 36;
             ZeigeMotorrad(meinMotorrad);
@@ -21,7 +21,7 @@ namespace HalloKlassen
 
 
             //Motorrad zweitMotorrad = new Motorrad();
-            var zweitMotorrad = new Motorrad("Susi")
+            var zweitMotorrad = new Cross()
             {
                 Hersteller = "Suzuki",
                 Ps = 136,
@@ -59,6 +59,13 @@ namespace HalloKlassen
 
         static void ZeigeMotorrad(Motorrad mr)
         {
+            Console.WriteLine(mr.SagMirWasDuBist());
+
+            if (mr is IElektro elektro)
+            {
+                Console.WriteLine(elektro.GetBatterieTyp());
+            }
+
             //#1 old school casing mit is
             if (mr is Cross)
             {
@@ -69,7 +76,7 @@ namespace HalloKlassen
                 else
                     Console.WriteLine("Ist cross ohne Schutzblech");
             }
-            
+
             //#2 ab .net 2.0: boxing
             Cross mrAsCross = mr as Cross;
             if (mrAsCross != null)

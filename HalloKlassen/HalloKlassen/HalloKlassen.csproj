@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Cross.cs" />
     <Compile Include="HalloDelegates.cs" />
+    <Compile Include="IElektro.cs" />
     <Compile Include="Motorrad.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -19,6 +19,11 @@ namespace HalloKlassen
             Console.WriteLine("CROSS fährt");
         }
 
+        public override string SagMirWasDuBist()
+        {
+            return "Ich bin eine Crossmaschine";
+        }
+
         public bool Schutzblech { get; set; }
     }
 }

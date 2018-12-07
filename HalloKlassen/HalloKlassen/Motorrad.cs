@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace HalloKlassen
 {
-   public class Motorrad
+    public abstract class Motorrad
     {
-
+        [XmlIgnoreAttribute]
         public string FahrgestellNummer { get; protected set; }
+
+        public abstract string SagMirWasDuBist();
 
         public Motorrad() //standard construktor
         {
@@ -24,10 +27,10 @@ namespace HalloKlassen
         public int Ps //full Property
         {
             get { return ps; }
-             set { ps = value; }
+            set { ps = value; }
         }
 
-        public string Hersteller { get;  set; }
+        public string Hersteller { get; set; }
         public string Farbe { get; set; }
         public DateTime Baujahr { get; set; }
 

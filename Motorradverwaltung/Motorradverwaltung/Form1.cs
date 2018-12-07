@@ -16,14 +16,14 @@ namespace Motorradverwaltung
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var liste = new List<Motorrad>();
+            var liste = new List<Rennmotorrad>();
             var herstellerListe = new string[] { "Yamaha", "Suzuki", "BMW", "Kawasaki" };
 
             var ran = new Random();
 
             for (int i = 0; i < 100; i++)
             {
-                var meinRad = new Motorrad
+                var meinRad = new Rennmotorrad
                 {
                     Ps = ran.Next(20, 3000),
                     Hersteller = herstellerListe[ran.Next(0, herstellerListe.Length)]
@@ -80,7 +80,7 @@ namespace Motorradverwaltung
                 {
                     var line = reader.ReadLine();
                     var teile = line.Split(';');
-                    var mr = new Motorrad()
+                    var mr = new Rennmotorrad()
                     {
                         Hersteller = teile[0],
                         Ps = int.Parse(teile[1]),
@@ -112,7 +112,8 @@ namespace Motorradverwaltung
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 var writer = new StreamWriter(dlg.FileName);
-                var serial = new XmlSerializer(typeof(List<Motorrad>));
+                var serial = new XmlSerializer(typeof(List<Rennmotorrad>));
+                
                 serial.Serialize(writer, dataGridView1.DataSource);
                 writer.Close();
             }
@@ -129,7 +130,7 @@ namespace Motorradverwaltung
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 var reader = new StreamReader(dlg.FileName);
-                var serial = new XmlSerializer(typeof(List<Motorrad>));
+                var serial = new XmlSerializer(typeof(List<Rennmotorrad>));
                 dataGridView1.DataSource = serial.Deserialize(reader);
                 reader.Close();
             }
