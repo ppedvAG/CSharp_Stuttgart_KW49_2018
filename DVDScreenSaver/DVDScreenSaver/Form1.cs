@@ -18,14 +18,28 @@ namespace DVDScreenSaver
             InitializeComponent();
             //kommentar
 #if DEBUG
-            MessageBox.Show("DEBUG");
+            //MessageBox.Show("DEBUG");
 #endif
 
             this.StartPosition = FormStartPosition.Manual;
             this.Left = Settings.Default.PosX;
             this.Top = Settings.Default.PosY;
-       
 
+
+            button1.TripleClick += Button1_TripleClick;
+            button1.TripleClick += Button1_TripleClick;
+            button1.TripleClick += Button1_TripleClick;
+            button1.TripleClick -= Button1_TripleClick;
+            button1.TripleClick -= Button1_TripleClick;
+            
+
+            //this.Click += (s, e) => MessageBox.Show("Daneben");
+        }
+
+
+        private void Button1_TripleClick(object sender, int clickCount)
+        {
+            MessageBox.Show("LALA");
         }
 
         int speedX = 2;
@@ -63,6 +77,11 @@ namespace DVDScreenSaver
         private Color GetRandomColor()
         {
             return Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+        }
+
+        private void button1_TripleClick(object sender, int clickCount)
+        {
+            MessageBox.Show($"TripleClick {clickCount}");
         }
     }
 }
